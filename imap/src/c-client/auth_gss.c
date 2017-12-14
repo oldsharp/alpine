@@ -69,11 +69,11 @@ long auth_gssapi_valid (void)
 	   mylocalhost ());
   buf.length = strlen (buf.value = tmp);
 				/* see if can build a name */
-  if (gss_import_name (&smn,&buf,GSS_C_NT_HOSTBASED_SERVICE,&name) !=
-      GSS_S_COMPLETE) return NIL;
+  /*if (gss_import_name (&smn,&buf,GSS_C_NT_HOSTBASED_SERVICE,&name) !=
+      GSS_S_COMPLETE) return NIL;*/
 				/* remove server method if no keytab */
   if (!kerberos_server_valid ()) auth_gss.server = NIL;
-  gss_release_name (&smn,&name);/* finished with name */
+  /*gss_release_name (&smn,&name);*//* finished with name */
   return LONGT;
 }
 
